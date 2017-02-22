@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Avenir Next LT Pro Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/AvenirNextLTPro-Bold.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro Medium Condensed';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/AvenirNextLTPro-MediumCn.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro Demi Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/AvenirNextLTPro-DemiIt.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro Ultra Light Condensed Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/AvenirNextLTPro-UltLtCnIt.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Avenir Next LT Pro Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/AvenirNextLTPro-It.woff') format('woff');
+}
+
+body {
+    background-color: white;
+}
+
+.logo-text {
+    color: #0095ff;
+    font-family: 'Avenir Next LT Pro Bold';
+    font-weight: normal;
+    font-size: 42px;
+    text-align: center;
+}
+
+.slogan-text {
+    font-family: 'Avenir Next LT Pro Demi Italic';
+    color: #4a4a4a;
+    font-weight: 600;
+    font-size: large;
+    text-align: center;
+    font-style: italic;
+}
+
+.description-text {
+    font-family: 'Avenir Next LT Pro Demi Italic';
+    color: #4a4a4a;
+    font-weight: 600;
+    font-size: x-large;
+    text-align: center;
+    font-style: italic;
+}
+
+#main-button {
+    z-index: 1;
+}
+
+.text {
+    font-family: 'Avenir Next LT Pro Demi Italic';
+    color: #4a4a4a;
+    font-weight: lighter;
+}
+
+#button-text {
+    font-family: 'Avenir Next LT Pro Demi Italic';
+    color: #4a4a4a;
+    padding-top: 65px;
+    font-size: large;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.button-text {
+    font-family: 'Avenir Next LT Pro Demi Italic';
+    color: #4a4a4a;
+    padding-top: 15px;
+    font-size: large;
+    text-align: center;
+    margin: 20px auto;
+}
+
+.button-remove-guest {
+    width: 10%;
+}
+
+.text-label-form {
+    font-family: 'Avenir Next LT Pro Demi Italic';
+    font-size: large;
+    color: #4a4a4a;
+    text-align: center;
+}
+
+.divider {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.input {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #999999;
+    box-shadow: 2px 2px 2px #e4e4e4;
+}
+
+.input-guest {
+    margin: 15px 0;
+}
+
+.centered {
+    margin: 0 auto;
+}
+
+#btn-submit {
+    height: 60px;
+    align-items: center;
+    text-align: center
+}
+
+#guests-input .input-static {
+    background-color: transparent;
+    border: none;
+    border-bottom: solid;
+    border-bottom-color: #0095ff;
+    box-shadow: none;
+}
+
+.line-divider {
+    border-width: thin;
+    border-color: #9f9f9f;
+    box-shadow: 2px 2px 2px #e4e4e4;
+}
+
+.divider-text {
+    font-family: 'Avenir Next LT Pro Italic';
+    color: #6d6d6d;
+    letter-spacing: 1px;
+    font-size: large;
+    text-align: center;
+}
+
+.btn-add-guests {
+    margin: 15px 0;
+    width: 100%;
+}
+
+#btn-new-guests {
+    margin: 15px 0;
+    width: 100%;
+}
+
+#btn-done {
+    margin: 15px 0;
+    width: 100%;
+}
+
+#btn-select-dates {
+    height: 60px;
+    align-items: center;
+    text-align: center
+}
+
+.header-text {
+    text-align: center;
+}
+
+.input-warning {
+    border-color: #ff8b70;
+}
+
+.input-success {
+    border-color: #66ff64;
+}
+
+.center-col {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#dates-input {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.table-head {
+    font-family: 'Avenir Next LT Pro Demi Italic';
+    text-align: center;
+    color: #4a4a4a;
+    font-size: medium;
+    font-weight: lighter;
+}
+
+.table-data {
+    font-family: 'Avenir Next LT Pro Italic';
+    text-align: center;
+    color: #4a4a4a;
+    font-size: medium;
+    font-weight: lighter;
+}
+
+div .timepicker {
+    width: 100%;
+}

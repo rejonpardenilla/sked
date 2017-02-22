@@ -1,0 +1,38 @@
+
+.button-circle {
+    border-style: solid;
+    border-color: #9e9e9e;
+    background-color :#d8d8d8;
+    border-width: 2px;
+    background-size: 6em;
+    height: 200px;
+    width: 200px;
+    display: table;
+    margin: 20px auto;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.button-circle-small{
+    border-style: solid;
+    border-color: #9e9e9e;
+    background-color :#d8d8d8;
+    border-width: 2px;
+    background-size: 6em;
+    height: 100px;
+    width: 100px;
+    display: table;
+    margin: 20px auto;
+    border-radius: 100%;
+    cursor: pointer;
+}
+
+.button-circle:active {
+     box-shadow: inset 0 5px 30px rgba(0,0,0,.2);
+     background-size: 5.9em;
+ }
+
+.button-circle-small:active {
+    box-shadow: inset 0 5px 30px rgba(0,0,0,.2);
+    background-size: 5.9em;
+}
