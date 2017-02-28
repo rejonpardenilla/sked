@@ -79,7 +79,7 @@ class GuestController extends Controller
         $guest->update();
 
         if ($this->isSkedComplete($event->id)) {
-            $this->notifyAdmin($event->id);
+            //$this->notifyAdmin($event->id);
         }
 
         return $request->all();

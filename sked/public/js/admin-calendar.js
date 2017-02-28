@@ -20,12 +20,15 @@ $('#date-picker').datepick({
             sqlDate + '">' +
             '</div>' +
             '<div class="col-xs-5 col-sm-4">' +
-            '<input required name="dates[' + dateCont + '][time]" type="text" class="form-control input time_element" id="timepicker' +
-            dateCont + '">' +
+            '<input type="text" name="dates[' + dateCont + '][time]" class="timepicker form-control input"/>'+
             '</div>' +
             '</div>' +
             '</div>';
         $('#dates-input').append(newInput);
+
+        $('.timepicker').wickedpicker({
+            title: ""
+        });
         $('#timepicker' + dateCont).timepicki();
 
         // var formatedDate = $.datepicker.formatDate('dd-mm-yy', date);

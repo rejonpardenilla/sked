@@ -91,7 +91,7 @@ class EventController extends Controller
         }
 
         $this->updateDateValoration($request['dates']);
-        $this->notifyGuests($request['eventId']);
+        //$this->notifyGuests($request['eventId']);
 
         return response('Store in the server', 200);
 

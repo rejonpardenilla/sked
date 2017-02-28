@@ -26,6 +26,8 @@
     <link href="{{asset('time-picky/css/timepicki.css')}}" rel="stylesheet" type="text/css">
     <script src="{{asset('time-picky/js/timepicki.js')}}"></script>
 
+    <link href="{{asset('wickedpicker/stylesheets/wickedpicker.css')}}" rel="stylesheet" type="text/css">
+
 
     <title>Sked</title>
 
@@ -174,9 +176,9 @@
 </div>
 
 </body>
-<script src='{{asset('js/admin-a1.js')}}'></script>
+<script type="text/javascript" src="{{asset('wickedpicker/src/wickedpicker.js')}}"></script>
 <script src="{{asset('js/admin-calendar.js')}}"></script>
-<script src="{{asset('js/admin-send-request.js')}}"></script>
+<script src='{{asset('js/admin-a1.js')}}'></script>
 
 </html>
 

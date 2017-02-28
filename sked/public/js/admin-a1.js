@@ -4,6 +4,7 @@ var guestsCont = 0;
 $(document).ready(function(){
 
     $('#eventName').focus();
+    $('html,body').scrollTop(0);
 
     $( '#deadline' ).datepicker({
         dateFormat: "yy-mm-dd"
