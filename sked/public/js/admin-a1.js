@@ -6,10 +6,6 @@ $(document).ready(function(){
     $('#eventName').focus();
     $('html,body').scrollTop(0);
 
-    $( '#deadline' ).datepicker({
-        dateFormat: "yy-mm-dd"
-    });
-    $('#deadline').prop("readonly", true);
 
     var guests = 0;
 

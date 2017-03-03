@@ -3,7 +3,8 @@
 namespace sked\Console\Commands;
 
 use Illuminate\Console\Command;
-use sked\Guest;
+use sked\Event;
+use sked\Http\Controllers\EmailSender;
 
 class CheckDeadlines extends Command
 {
@@ -12,7 +13,7 @@ class CheckDeadlines extends Command
      *
      * @var string
      */
-    protected $signature = 'check:deadlines';
+    protected $signature = 'decrease:minutes';
 
     /**
      * The console command description.
@@ -38,11 +39,20 @@ class CheckDeadlines extends Command
      */
     public function handle()
     {
-        $g = new Guest();
-        $g->event_id = 1;
-        $g->email = 'prueba';
-        $g->name = 'elde la prueba';
-        $g->required = 1;
-        $g->save();
+
+        $events = Event::where('status', '=', '1')->get();
+
+        foreach($events as $event){
+
+            $event->remaining_minutes--;
+
+            if($event->remaining_minutes == 0){
+
+                $event->status = 0;
+                EmailSender::notifyAdmin($event->id);
+
+            }
+            $event->update();
+        }
     }
 }

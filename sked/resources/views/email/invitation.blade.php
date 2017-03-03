@@ -8,7 +8,7 @@
     <title>Invitation</title>
 </head>
 <body>
-        <h1 style="text-align: center; color: #0095FF;">Sked invitattion</h1>
+        <h1 style="text-align: center; color: #0095FF;">Sked invitation</h1>
         <p>You are invited to sked in the <strong>{{$event->name}}</strong> by <strong>{{$event->username}}</strong></p>
         <p>Enter in this <a href="http://{{$url}}">link</a> to sked it </p>
 </body>

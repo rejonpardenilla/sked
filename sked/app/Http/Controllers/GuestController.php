@@ -25,6 +25,10 @@ class GuestController extends Controller
         $event_id = $request['eventid'];
         $event = Event::findOrFail($event_id);
 
+        if($event->status == 0){
+            return view('sked/eventExpired');
+        }
+
         $dates = Date::where('event_id', '=', $event->id)->get();
 
         return view('sked/guest', ['guest' => $guest, 'event' => $event, 'dates' => $dates]);
@@ -79,7 +83,8 @@ class GuestController extends Controller
         $guest->update();
 
         if ($this->isSkedComplete($event->id)) {
-            //$this->notifyAdmin($event->id);
+            $event->status = 0;
+            $this->notifyAdmin($event->id);
         }
 
         return $request->all();
@@ -109,7 +114,11 @@ class GuestController extends Controller
         $possible_dates = $event_dates->where('valoration', '>', '0')
             ->where('assistance', '>', 1)->get();
 
-        if(!$possible_dates->isEmpty()) {
+        $absents_guests_required = Guest::where('event_id', '=', $event_id)
+            ->where('required', '=', '1')
+            ->where('already_sked', '=', '0')->get();
+
+        if(!$possible_dates->isEmpty() && $absents_guests_required->isEmpy()) {
 
             $max_assistance = $possible_dates->max('assistance');
             $more_assistance_dates = $possible_dates->where('assistance', '=', $max_assistance);

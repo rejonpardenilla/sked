@@ -96,14 +96,14 @@
     </div>
 
     <div class="form-group row">
-        <label for="inputEmail3" class="text-label-form col-sm-3 col-form-label">Deadline</label>
+        <label for="inputEmail3" class="text-label-form col-sm-3 col-form-label">Hours to finish</label>
         <div class="col-sm-7">
-            <input required name="deadline" type="text" class="form-control input" id="deadline">
+            <input required name="hours" type="number" class="form-control input" id="deadline">
         </div>
     </div>
     <div class="row">
         <div class="col-sm-3"></div>
-        <div class="col-sm-7 text"> *Number of days guests have to Sked it</div>
+        <div class="col-sm-7 text"> *Hours that guests have to Sked it</div>
     </div>
 
     <div class="row divider">

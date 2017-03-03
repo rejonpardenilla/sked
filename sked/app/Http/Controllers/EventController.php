@@ -19,6 +19,7 @@ class EventController extends Controller
             [
                 'guests' => 'required',
                 'dates' => 'required',
+                'hours' => 'numeric|min:1'
             ],
             [
                 'required' => 'At least one :attribute must be added'
@@ -34,7 +35,8 @@ class EventController extends Controller
         $event->name = $request['eventName'];
         $event->username = $request['userName'];
         $event->email = $request['email'];
-        $event->deadline = $request['deadline'];
+        $event->remaining_minutes = $request['hours']*60;
+        $event->status = 1;
 
         $event->save();
 
@@ -91,7 +93,7 @@ class EventController extends Controller
         }
 
         $this->updateDateValoration($request['dates']);
-        //$this->notifyGuests($request['eventId']);
+        $this->notifyGuests($request['eventId']);
 
         return response('Store in the server', 200);
 
