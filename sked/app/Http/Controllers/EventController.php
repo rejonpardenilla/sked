@@ -93,7 +93,8 @@ class EventController extends Controller
         }
 
         $this->updateDateValoration($request['dates']);
-        $this->notifyGuests($request['eventId']);
+
+        EmailSender::notifyAdmin($request['eventId']);
 
         return response('Store in the server', 200);
 
@@ -118,23 +119,5 @@ class EventController extends Controller
 
     }
 
-    private function notifyGuests($event_id)
-    {
-        $guests = Guest::where('event_id', '=', $event_id)->get();
-
-        foreach ($guests as $guest){
-
-            $url = 'dev.sked.es/guest?guestid='.$guest->id.'&eventid='.$event_id;
-
-            Mail::send('email.invitation', ['event' => Event::findOrFail($event_id),
-            'url' => $url], function($ms) use ($guest){
-
-                $ms->subject('You are invited to sked in a event');
-                $ms->to($guest->email);
-            });
-
-        }
-
-    }
 
 }

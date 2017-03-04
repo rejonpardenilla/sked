@@ -21,7 +21,11 @@ class EmailSender
         $possible_dates = $event_dates->where('valoration', '>', '0')
             ->where('assistance', '>', 1)->get();
 
-        if(!$possible_dates->isEmpty()) {
+        $absents_guests_required = Guest::where('event_id', '=', $event_id)
+            ->where('required', '=', '1')
+            ->where('already_sked', '=', '0')->get();
+
+        if((!$possible_dates->isEmpty()) and $absents_guests_required->isEmpty()) {
 
             $max_assistance = $possible_dates->max('assistance');
             $more_assistance_dates = $possible_dates->where('assistance', '=', $max_assistance);

@@ -98,3 +98,24 @@ Route::get('/guest', 'GuestController@order');
 
 Route::post('/guest/store', 'GuestController@store');
 
+Route::get('/prueba/{id}', function($event_id){
+
+    $event_dates = sked\Date::where('event_id', '=', $event_id);
+    $event = sked\Event::findOrFail($event_id);
+
+    $possible_dates = $event_dates->where('valoration', '>', '0')
+        ->where('assistance', '>', 1)->get();
+
+    $absents_guests_required = sked\Guest::where('event_id', '=', $event_id)
+        ->where('required', '=', '1')
+        ->where('already_sked', '=', '0')->get();
+
+    if((!$possible_dates->isEmpty()) and $absents_guests_required->isEmpty()) {
+        echo 'si';
+    }
+    else{
+        echo 'no';
+    }
+
+});
+
