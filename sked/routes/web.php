@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 });
 
+
 Route::get('/create', function () {
 
     return view('sked.create');
@@ -38,6 +39,8 @@ Route::get('/success', function(){
 });
 
 Route::post('/comment', 'CommentController@store');
+
+Route::get('/admin/comments', 'CommentController@index');
 
 Route::get('/prueba/{id}', function ($id) {
 

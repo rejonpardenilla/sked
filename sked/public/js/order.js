@@ -56,7 +56,7 @@ $(document).ready(function(){
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             success: function () {
-                $.loadingBlockHide
+                $.loadingBlockHide;
                 window.location.href = '/feedback/admin/'+eventId;
             },
         });
