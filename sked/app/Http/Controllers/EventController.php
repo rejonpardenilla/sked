@@ -19,7 +19,8 @@ class EventController extends Controller
             [
                 'guests' => 'required',
                 'dates' => 'required',
-                'hours' => 'numeric|min:1'
+                'hours' => 'numeric|min:1',
+                'email' => 'email'
             ],
             [
                 'required' => 'At least one :attribute must be added'
@@ -35,7 +36,7 @@ class EventController extends Controller
         $event->name = $request['eventName'];
         $event->username = $request['userName'];
         $event->email = $request['email'];
-        $event->remaining_minutes = $request['hours']*60;
+        $event->remaining_minutes = $request['hours']; //debug mode in minutes, originally -> *60
         $event->status = 1;
 
         $event->save();
@@ -94,7 +95,7 @@ class EventController extends Controller
 
         $this->updateDateValoration($request['dates']);
 
-        EmailSender::notifyAdmin($request['eventId']);
+        //EmailSender::notifyGuests($request['eventId']);
 
         return response('Store in the server', 200);
 

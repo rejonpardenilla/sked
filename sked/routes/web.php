@@ -12,11 +12,23 @@
 */
 
 Route::get('/', function () {
+
     return view('index');
+
 });
 
 Route::get('/create', function () {
+
     return view('sked.create');
+
+});
+
+Route::get('/feedback/{id}', 'CommentController@show');
+
+Route::get('/comment', function(){
+
+    return view('sked.skedComment');
+
 });
 
 Route::get('/success', function(){
@@ -24,6 +36,8 @@ Route::get('/success', function(){
     return view('sked.skedSuccess');
 
 });
+
+Route::post('/comment', 'CommentController@store');
 
 Route::get('/prueba/{id}', function ($id) {
 

@@ -85,7 +85,7 @@ class GuestController extends Controller
         if ($this->isSkedComplete($event->id)) {
             $event->status = 0;
             $event->update();
-            EmailSender::notifyAdmin($event->id);
+            //EmailSender::notifyAdmin($event->id);
         }
 
         return $request->all();

@@ -1,6 +1,14 @@
 $(document).ready(function(){
 
-    $('#datesTable button.move').click(function() {
+    var originalDates = $('#datesTable').html();
+
+    $('#btnResetTable').click(function(){
+
+        $('#datesTable').html(originalDates);
+
+    });
+
+    $('#datesTable').on('click', '.move', function() {
 
         var row = $(this).closest('tr');
 
@@ -10,10 +18,9 @@ $(document).ready(function(){
             row.next().after(row);
     });
 
-    $('#datesTable button.remove').click(function() {
+    $('#datesTable').on('click', '.remove', function() {
 
         var row = $(this).closest('tr');
-
 
         row.removeClass('visible');
         row.addClass('hidden');
@@ -64,7 +71,7 @@ $(document).ready(function(){
             },
             success: function () {
                 $.loadingBlockHide
-                window.location.href = '/success';
+                window.location.href = '/feedback/'+eventId;
             },
         });
         $.loadingBlockShow({

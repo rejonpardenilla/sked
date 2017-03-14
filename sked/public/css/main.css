@@ -92,7 +92,11 @@ body {
 }
 
 .button-remove-guest {
-    width: 10%;
+    margin-top: 15px;
+}
+
+.button-remove-date {
+    width: 50px;
 }
 
 .text-label-form {

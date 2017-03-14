@@ -47,7 +47,7 @@ $(document).ready(function(){
             },
             success: function () {
                 $.loadingBlockHide
-                window.location.href = '/success';
+                window.location.href = '/feedback/'+eventId;
             },
         });
         $.loadingBlockShow({

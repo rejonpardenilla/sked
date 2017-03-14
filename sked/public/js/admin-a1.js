@@ -15,7 +15,7 @@ $(document).ready(function(){
 
          if(guests == 1){
              $('#guests-input').append(
-                 '<div class="row visible-md visible-lg">'+
+                 '<div id="guest-head" class="row visible-md visible-lg">'+
              '<div class="col-sm-12" style="height: 20px"></div>'+
                  '<div class="col-sm-2"></div>'+
                  '<div class="col-sm-4">'+
@@ -31,20 +31,20 @@ $(document).ready(function(){
          var form =
              '<div class="row guests-form">'+
                 '<div class="col-sm-2"></div>'+
-              '<div class="col-sm-4">'+
+              '<div class="col-sm-4 col-xs-12">'+
              '<input required name="guests['+guestsCont+'][name]" type="text" class="form-control input input-guest input-name" ' +
               'id="guest-name" placeholder="Name">'+
              '</div>'+
 
-             '<div class="col-sm-4">'+
-             '<input required name="guests['+guestsCont+'][email]" type="text" class="form-control input input-guest input-email" ' +
+             '<div class="col-sm-4 col-xs-8">'+
+             '<input required name="guests['+guestsCont+'][email]" type="email" class="form-control input input-guest input-email" ' +
              'placeholder="Email">'+
              '</div>'+
 
-             '<div class="col-sm-2">'+
+             '<div class="col-sm-2 col-xs-4">'+
              '<button type="button" button_id="'+ guests +'" class="btn-add-guests btn text" >+ Add</button>'+
              '</div>'+
-             '<div class="col-sm-12" style="height: 30px">'+
+             '<div class="col-xs-12" style="height: 30px">'+
              '</div>'+
              '</div>';
 
@@ -84,7 +84,7 @@ $(document).ready(function(){
             $(this).removeClass('btn-add-guests');
             $(this).removeClass('text');
             $(this).addClass('btn-danger');
-            $(this).addClass('btn-remove-guest');
+            $(this).addClass('button-remove-guest');
 
             $(this).text('x')
 
@@ -101,10 +101,14 @@ $(document).ready(function(){
     });
 
 
-    $('body').on('click', '.btn-remove-guest', function (){
+    $('body').on('click', '.button-remove-guest', function (){
 
         $(this).parent().parent().remove();
+        guests--;
 
+        if(guests == 0){
+            $('#guest-head').remove();
+        }
 
     });
 
