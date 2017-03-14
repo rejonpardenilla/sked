@@ -37,6 +37,16 @@ $(document).ready(function(){
 
     $('#button-sked').click(function(){
 
+        $.loadingBlockShow({
+            text: '',
+            imgPath: 'img/default.svg',
+            imgStyle: {
+                width: 'auto',
+                textAlign: 'center',
+                marginTop: '20%'
+            }
+        });
+
         var orderedDates = [];
         var disabledDates = [];
 
@@ -71,18 +81,10 @@ $(document).ready(function(){
             },
             success: function () {
                 $.loadingBlockHide
-                window.location.href = '/feedback/'+eventId;
+                window.location.href = '/feedback/guest/'+guestId;
             },
         });
-        $.loadingBlockShow({
-            text: '',
-            imgPath: 'img/default.svg',
-            imgStyle: {
-                width: 'auto',
-                textAlign: 'center',
-                marginTop: '20%'
-            },
-        });
+
 
     });
 

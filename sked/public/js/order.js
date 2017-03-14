@@ -12,6 +12,16 @@ $(document).ready(function(){
 
     $('#button-sked').click(function(){
 
+        $.loadingBlockShow({
+            text: '',
+            imgPath: 'img/default.svg',
+            imgStyle: {
+                width: 'auto',
+                textAlign: 'center',
+                marginTop: '20%'
+            },
+        });
+
         var requiredGuests = [];
         var orderedDates = [];
 
@@ -47,18 +57,10 @@ $(document).ready(function(){
             },
             success: function () {
                 $.loadingBlockHide
-                window.location.href = '/feedback/'+eventId;
+                window.location.href = '/feedback/admin/'+eventId;
             },
         });
-        $.loadingBlockShow({
-            text: '',
-            imgPath: 'img/default.svg',
-            imgStyle: {
-                width: 'auto',
-                textAlign: 'center',
-                marginTop: '20%'
-            },
-        });
+
 
 
     });

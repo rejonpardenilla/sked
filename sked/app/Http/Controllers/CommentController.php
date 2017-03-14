@@ -5,14 +5,24 @@ namespace sked\Http\Controllers;
 use Illuminate\Http\Request;
 use sked\Comment;
 use sked\Event;
+use sked\Guest;
 
 class CommentController extends Controller
 {
 
-    public function show($event_id) {
+    public function show($type, $id) {
 
-        $event = Event::findOrFail($event_id);
-        $email = $event->email;
+        $email = '';
+
+        if($type == 'admin'){
+            $event = Event::findOrFail($id);
+            $email = $event->email;
+        }
+
+        elseif ($type == 'guest'){
+            $guest = Guest::findOrFail($id);
+            $email = $guest->email;
+        }
 
         return redirect('/success')->with(['email' => $email]);
 

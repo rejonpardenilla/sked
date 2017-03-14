@@ -23,7 +23,7 @@ Route::get('/create', function () {
 
 });
 
-Route::get('/feedback/{id}', 'CommentController@show');
+Route::get('/feedback/{type}/{id}', 'CommentController@show');
 
 Route::get('/comment', function(){
 
