@@ -4,8 +4,6 @@ var guestsCont = 0;
 $(document).ready(function(){
 
     $('#eventName').focus();
-    $('html,body').scrollTop(0);
-
 
     var guests = 0;
 

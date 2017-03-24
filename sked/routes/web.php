@@ -13,6 +13,24 @@
 
 Route::get('/', function () {
 
+    $visit = \sked\Visit::where('date', date('Y-m-d'))->first();
+
+    if($visit == null){
+
+        $visit = new \sked\Visit();
+        $visit->date = date('Y-m-d');
+        $visit->visits = 1;
+        $visit->clicks_on_sked = 0;
+        $visit->save();
+    }
+    else{
+
+        $visit->visits++;
+        $visit->update();
+
+    }
+
+
     return view('index');
 
 });
@@ -23,6 +41,8 @@ Route::get('/create', function () {
     return view('sked.create');
 
 });
+
+Route::get('/admin/stats', 'StatsController@show');
 
 Route::get('/feedback/{type}/{id}', 'CommentController@show');
 

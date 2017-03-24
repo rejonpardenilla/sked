@@ -1,5 +1,6 @@
 dateCont = 0;
 $('#date-picker').datepick({
+    showOnFocus: false,
     onSelect: function (dates) {
         dateCont++;
         if (dateCont == 1) {

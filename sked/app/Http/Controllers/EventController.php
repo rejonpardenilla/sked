@@ -77,6 +77,22 @@ class EventController extends Controller
     public function order(Request $request)
     {
 
+        $visit = \sked\Visit::where('date', date('Y-m-d'))->first();
+
+        if($visit == null){
+
+            $visit = new \sked\Visit();
+            $visit->date = date('Y-m-d');
+            $visit->clicks_in_sked = 1;
+            $visit->save();
+        }
+        else{
+
+            $visit->clicks_in_sked++;
+            $visit->update();
+
+        }
+
         foreach ($request['guests'] as $g) {
             $guest = Guest::findOrFail($g['id']);
 
