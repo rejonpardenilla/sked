@@ -40,13 +40,7 @@
 
     <form>
         <div class="row">
-            <div class="col-sm-4 col-sm-offset-2">
-                <p class="description-text" style="text-align: left"> {{$event->name}} by {{$event->username}}</p>
-            </div>
-            <div class="col-sm-4 col-sm-offset-2">
-                <p class="description-text" style="text-align: left"> {{$guest->name}}</p>
-            </div>
-        </div>
+
 
 
         <div class="row divider">
@@ -62,9 +56,6 @@
 
         <div class="row">
 
-            <input id="eventId" type="hidden" value="{{$event->id}}"/>
-            <input id="guestId" type="hidden" value="{{$guest->id}}"/>
-
             <div class="col-sm-6 col-sm-offset-3">
                 <table id="datesTable" class="table">
                     <thead>
@@ -76,26 +67,7 @@
                         <th></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    @foreach($dates as $date)
-                        <tr>
-                            <td class="hidden id-field">{{$date->id}}</td>
-                            <td class="table-data">{{ Carbon\Carbon::parse($date->date)->format('F jS') }}</td>
-                            <td class="table-data">{{$date->time}}</td>
-                            <td class="table-data">
-                                <button type="button" class="move up">
-                                    <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="move down">
-                                    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="remove">
-                                    <span class="glyphicon glyphicon-remove " aria-hidden="true"></span>
-                                </button>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
+
                 </table>
             </div>
 

@@ -39,12 +39,7 @@
 <div id="main-container" class="container">
 
     <form>
-        <input id="eventId" type="hidden" value="{{$event->id}}"/>
-        <div class="row">
-            <div class="col-sm-6 col-sm-offset-3">
-                <p class="description-text" style="text-align: left"> {{$event->name}} by {{$event->username}}</p>
-            </div>
-        </div>
+
 
         <div class="row divider">
 
@@ -69,15 +64,7 @@
                     </tr>
                     </thead>
 
-                    <tbody>
-                    @foreach($guests as $guest)
-                        <tr>
-                            <td class="hidden id-field">{{$guest->id}}</td>
-                            <td class="table-data">{{$guest->name}}</td>
-                            <td class="table-data"><input class="check" type="checkbox"></td>
-                        </tr>
-                    @endforeach
-                    </tbody>
+
                 </table>
             </div>
 
@@ -107,23 +94,7 @@
                         <th></th>
                     </tr>
                     </thead>
-                    <tbody>
-                    @foreach($dates as $date)
-                        <tr>
-                            <td class="hidden id-field">{{$date->id}}</td>
-                            <td class="table-data">{{ Carbon\Carbon::parse($date->date)->format('F jS') }}</td>
-                            <td class="table-data">{{$date->time}}</td>
-                            <td class="table-data">
-                                <button type="button" class="move up">
-                                    <span class="glyphicon glyphicon-triangle-top" aria-hidden="true"></span>
-                                </button>
-                                <button type="button" class="move down">
-                                    <span class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></span>
-                                </button>
-                            </td>
-                        </tr>
-                    @endforeach
-                    </tbody>
+
                 </table>
             </div>
 

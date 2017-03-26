@@ -15,6 +15,8 @@ class EventController extends Controller
 
     public function store(Request $request)
     {
+
+        return view('sked.order', ['guests' => [], 'dates' => [], 'event' => []]);
         $this->validate($request,
             [
                 'guests' => 'required',
@@ -71,24 +73,6 @@ class EventController extends Controller
 
     public function order(Request $request)
     {
-
-        foreach ($request['guests'] as $g) {
-            $guest = Guest::findOrFail($g['id']);
-
-            if ($g['isRequired'] == 'true') {
-
-                $guest->required = 1;
-
-            } else {
-
-                $guest->required = 0;
-
-            }
-            $guest->update();
-        }
-
-        $this->updateDateValoration($request['dates']);
-        $this->notifyGuests($request['eventId']);
 
         return response('Store in the server', 200);
 

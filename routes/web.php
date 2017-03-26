@@ -29,6 +29,16 @@ Route::post('/order/store', 'EventController@order');
 
 Route::post('/order', 'EventController@store');
 
+Route::get('/view2', function(){
+
+    return view('sked.order', ['guests' => [], 'dates' => [], 'event' => []]);
+});
+
+Route::get('/view3', function(){
+
+    return view('sked.guest', ['guests' => [], 'dates' => [], 'event' => []]);
+});
+
 Route::get('/clean', function (){
 
     $events = \sked\Event::all();
